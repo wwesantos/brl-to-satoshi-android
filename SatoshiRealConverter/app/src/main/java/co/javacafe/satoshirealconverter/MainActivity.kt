@@ -108,7 +108,7 @@ class MainActivity : BaseActivity() {
             txtBRL.setText("")
             txtBTC.setText("")
             txtMicroBTC.setText("")
-            txtMicroBTC.setText("")
+            txtMilliBTC.setText("")
             txtSatoshiBTC.setText("")
             return
         }
