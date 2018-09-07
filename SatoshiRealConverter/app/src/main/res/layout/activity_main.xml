@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="196dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txtBRL"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="@string/hint_et_brl"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/txtBTC"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="@string/hint_et_btc"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/txtMilliBTC"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="@string/hint_et_milli_btc"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/txtMicroBTC"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="@string/hint_et_micro_btc"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/txtSatoshiBTC"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="@string/hint_et_satoshi_btc"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/labelsLayout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblBRL"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="BRL"
+                android:textAlignment="gravity" />
+
+            <TextView
+                android:id="@+id/lblBTC"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="BTC"
+                android:textAlignment="gravity" />
+
+            <TextView
+                android:id="@+id/lblMilliBTC"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="milliBTC"
+                android:textAlignment="gravity" />
+
+            <TextView
+                android:id="@+id/lblMicroBTC"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="microBTC"
+                android:textAlignment="gravity" />
+
+            <TextView
+                android:id="@+id/lblSatoshiBTC"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Satoshi"
+                android:textAlignment="gravity" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="378dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:id="@+id/bottomLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/lblExchangeRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="BRL/BTC"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/btnSync"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblLastUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Last Update"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnSync"
+            android:background="@android:color/transparent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:enabled="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_action_name_sync"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

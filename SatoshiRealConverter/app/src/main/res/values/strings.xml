@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Satoshi Real Converter</string>
+    <string name="hint_et_brl">Enter BRL value</string>
+    <string name="hint_et_btc">Enter BTC value</string>
+    <string name="hint_et_milli_btc">Enter millibit value</string>
+    <string name="hint_et_micro_btc">Enter microbit value</string>
+    <string name="hint_et_satoshi_btc">Enter satoshi value</string>
+</resources>
