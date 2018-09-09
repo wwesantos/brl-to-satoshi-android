@@ -14,10 +14,25 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.util.*
+import android.content.Intent
+
+
 
 class MainActivity : BaseActivity() {
 
     private var exchangeRateBrlToBtc = BigDecimal("10000")
+
+    override fun onBackPressed() {
+        moveTaskToBack(true);
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            moveTaskToBack(true)
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
