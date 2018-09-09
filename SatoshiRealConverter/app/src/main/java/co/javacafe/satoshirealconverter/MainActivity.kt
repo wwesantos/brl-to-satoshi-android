@@ -14,7 +14,6 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.util.*
-import android.content.Intent
 
 
 
@@ -217,7 +216,7 @@ class MainActivity : BaseActivity() {
                 enableSyncBtn()
             }else{
                 exchangeRateBrlToBtc = BigDecimal(result?.result)
-                lblExchangeRate.text = "BRL/BTC: " + getFormatedAndTrimmed(exchangeRateBrlToBtc,"0.############")
+                lblExchangeRate.text = "1 BTC = R$ " + getFormatedAndTrimmed(exchangeRateBrlToBtc,"0.##")
                 lblLastUpdate.text = "Last Update: " + DATE_FORMAT.format(Calendar.getInstance().time)
                 enableInputs()
             }
