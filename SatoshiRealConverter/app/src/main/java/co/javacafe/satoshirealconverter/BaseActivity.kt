@@ -8,7 +8,7 @@ import android.content.Context
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    protected fun isNetworkAvailable():Boolean{
+    private fun isNetworkAvailable():Boolean{
         val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetworkInfo = connectivityManager.activeNetworkInfo
         return activeNetworkInfo != null && activeNetworkInfo.isConnected

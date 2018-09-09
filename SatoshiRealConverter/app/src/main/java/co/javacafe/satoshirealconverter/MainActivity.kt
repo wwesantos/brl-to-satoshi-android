@@ -21,6 +21,7 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
         disbleInputs()
@@ -77,8 +78,12 @@ class MainActivity : BaseActivity() {
         })
 
         btnSync.setOnClickListener{ _ ->
-            disbleInputs()
-            LoadExchangeRate().execute()
+            if (!verifyInternetConneciton()){
+                enableSyncBtn()
+            }else{
+                disbleInputs()
+                LoadExchangeRate().execute()
+            }
         }
 
         bottomLayout.setOnTouchListener(View.OnTouchListener { _, _ ->
@@ -93,7 +98,7 @@ class MainActivity : BaseActivity() {
 
     }
 
-    fun hideKeyboard(activity: Activity) {
+    private fun hideKeyboard(activity: Activity) {
         val imm = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         var view = activity.currentFocus
         if (view == null) {
