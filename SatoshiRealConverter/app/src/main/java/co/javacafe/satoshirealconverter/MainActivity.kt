@@ -22,7 +22,7 @@ class MainActivity : BaseActivity() {
     private var exchangeRateBrlToBtc = BigDecimal("10000")
 
     override fun onBackPressed() {
-        moveTaskToBack(true);
+        moveTaskToBack(true)
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
@@ -121,23 +121,35 @@ class MainActivity : BaseActivity() {
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
-    private fun updateValues(value: String, type: ValueType){
 
-        if(value.isBlank()){
-            txtBRL.setText("")
-            txtBTC.setText("")
-            txtMicroBTC.setText("")
-            txtMilliBTC.setText("")
-            txtSatoshiBTC.setText("")
+    private fun setAllFields(value: String){
+        txtBRL.setText(value)
+        txtBTC.setText(value)
+        txtMilliBTC.setText(value)
+        txtMicroBTC.setText(value)
+        txtSatoshiBTC.setText(value)
+    }
+
+    private fun updateValues(v: String, type: ValueType){
+
+        if(v.isBlank()){
+            setAllFields("")
             return
         }
 
+        val vAux = if (v.startsWith(".") || v.endsWith(".")) {
+            "0${v}0"
+        }else{
+            v
+        }
+
+
         val currentBtcValue:BigDecimal = when(type){
-            ValueType.BRL -> BigDecimal(value).divide(exchangeRateBrlToBtc, 30, RoundingMode.HALF_UP)
-            ValueType.BTC -> BigDecimal(value)
-            ValueType.MILLI_BTC -> BigDecimal(value).divide(MILLI_BTC, 30, RoundingMode.HALF_UP)
-            ValueType.MICRO_BTC -> BigDecimal(value).divide(MICRO_BTC, 30, RoundingMode.HALF_UP)
-            ValueType.SATOSHI_BTC -> BigDecimal(value).divide(SATOSHI_BTC, 30, RoundingMode.HALF_UP)
+            ValueType.BRL -> BigDecimal(vAux).divide(exchangeRateBrlToBtc, 30, RoundingMode.HALF_UP)
+            ValueType.BTC -> BigDecimal(vAux)
+            ValueType.MILLI_BTC -> BigDecimal(vAux).divide(MILLI_BTC, 30, RoundingMode.HALF_UP)
+            ValueType.MICRO_BTC -> BigDecimal(vAux).divide(MICRO_BTC, 30, RoundingMode.HALF_UP)
+            ValueType.SATOSHI_BTC -> BigDecimal(vAux).divide(SATOSHI_BTC, 30, RoundingMode.HALF_UP)
         }
 
         if(type != ValueType.BRL){
