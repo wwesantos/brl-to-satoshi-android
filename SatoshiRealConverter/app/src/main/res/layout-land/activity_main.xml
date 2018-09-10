@@ -126,7 +126,7 @@
 
         <TextView
             android:id="@+id/lblExchangeRate"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="BRL/BTC"
             android:textAlignment="center"
